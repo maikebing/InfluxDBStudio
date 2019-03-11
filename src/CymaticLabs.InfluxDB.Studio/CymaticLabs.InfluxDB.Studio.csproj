@@ -338,6 +338,41 @@
     <Compile Include="Dialogs\UserPasswordDialog.Designer.cs">
       <DependentUpon>UserPasswordDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\es-es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>es-es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\flag.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>flag.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\fr-fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fr-fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\ja-jp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ja-jp.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\ko-kr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ko-kr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\zh-cn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zh-cn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\zh-tw.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zh-tw.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AppForm.resx">
       <DependentUpon>AppForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -398,6 +433,30 @@
     <EmbeddedResource Include="Dialogs\ManageConnectionsDialog.resx">
       <DependentUpon>ManageConnectionsDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\en-us.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en-us.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\es-es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>es-es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\flag.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>flag.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\fr-fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>fr-fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\ja-jp.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ja-jp.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\ko-kr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ko-kr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -418,6 +477,14 @@
     <EmbeddedResource Include="Dialogs\UserPasswordDialog.resx">
       <DependentUpon>UserPasswordDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\zh-cn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>zh-cn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\zh-tw.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>zh-tw.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="FodyWeavers.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -426,6 +493,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>en-us.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -609,6 +681,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
+    <None Include="Resources\Image1.jpg" />
     <Content Include="Resources\RP_Duration_Info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
