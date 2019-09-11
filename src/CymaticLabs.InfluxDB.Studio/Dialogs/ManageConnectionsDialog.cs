@@ -217,7 +217,7 @@ namespace CymaticLabs.InfluxDB.Studio.Dialogs
                 var li = new ListViewItem(c.Name, 0);
                 li.Tag = c;
                 listView.Items.Add(li);
-                li.SubItems.Add(new ListViewItem.ListViewSubItem(li, c.Host + ":" + c.Port.ToString()));
+                li.SubItems.Add(new ListViewItem.ListViewSubItem(li, c.Host + ":" + c.Port.ToString() + c.ContextPath.ToString()));
             }
 
             listView.EndUpdate();

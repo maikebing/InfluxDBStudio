@@ -35,6 +35,11 @@ namespace CymaticLabs.InfluxDB.Data
         public ushort Port { get; set; }
 
         /// <summary>
+        /// Gets or sets the port number to use when connecting to the InfluxDB server.
+        /// </summary>
+        public string ContextPath { get; set; }
+
+        /// <summary>
         /// The name of the preferred database to use (optional).
         /// </summary>
         public string Database { get; set; }
@@ -63,7 +68,7 @@ namespace CymaticLabs.InfluxDB.Data
         {
             get
             {
-                return string.Format("{0}://{1}:{2}", UseSsl ? "https" : "http", Host, Port);
+                return string.Format("{0}://{1}:{2}{3}", UseSsl ? "https" : "http", Host, Port, ContextPath);
             }
         }
 
@@ -78,17 +83,19 @@ namespace CymaticLabs.InfluxDB.Data
         /// <param name="name">The human-readable name for the connection.</param>
         /// <param name="host">The host URL for the InfluxDB server to connect to.</param>
         /// <param name="port">The port number to use when connecting to the InfluxDB server.</param>
+        /// <param name="contextPath">The context path to use when connecting to the InfluxDB server.</param>
         /// <param name="username">The username to use when connecting to the InfluxDB server.</param>
         /// <param name="password">The password to use when connecting to the InfluxDB server.</param>
         /// <param name="useSsl">Whether or not to use SSL to communicate with the InfluxDB server.</param>
         /// <param name="database">The name of the preferred database to use (optional).</param>
-        public InfluxDbConnection(string id, string name, string host, ushort port, 
+        public InfluxDbConnection(string id, string name, string host, ushort port, string contextPath,
             string username, string password, bool useSsl = true, string database = null)
         {
             Id = id;
             Name = name;
             Host = host;
             Port = port;
+            ContextPath = contextPath;
             Username = username;
             Password = password;
             UseSsl = useSsl;
