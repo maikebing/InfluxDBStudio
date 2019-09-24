@@ -7,6 +7,8 @@ using InfluxData.Net.Common.Enums;
 using InfluxData.Net.InfluxDb.Models;
 using InfluxData.Net.InfluxDb.Models.Responses;
 
+using System.Net;
+
 namespace CymaticLabs.InfluxDB.Data
 {
     /// <summary>
@@ -37,8 +39,13 @@ namespace CymaticLabs.InfluxDB.Data
             // Create the underlying concrete client
             var c = connection;
 
+            // trust any certificate
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.ServerCertificateValidationCallback +=
+                (sender, cert, chain, sslPolicyErrors) => { return true; };
+
             influx = new InfluxData.Net.InfluxDb.InfluxDbClient(c.HttpConnectionString, 
-                c.Username, c.Password, InfluxDbVersion.Latest);
+                c.Username, c.Password, InfluxDbVersion.Latest);            
         }
 
         #endregion Constructors
