@@ -91,6 +91,12 @@ namespace CymaticLabs.InfluxDB.Studio.Dialogs
             set { useSsl.Checked = value; }
         }
 
+        public string Path
+        {
+            get { return path.Text; }
+            set { path.Text = value; }
+        }
+
         #endregion Properties
 
         #region Constructors
@@ -188,6 +194,7 @@ namespace CymaticLabs.InfluxDB.Studio.Dialogs
             Username = connection.Username;
             Password = connection.Password;
             UseSsl = connection.UseSsl;
+            Path = connection.Path;
         }
 
         /// <summary>
@@ -197,7 +204,7 @@ namespace CymaticLabs.InfluxDB.Studio.Dialogs
         public InfluxDbConnection CreateConnection()
         {
             return new InfluxDbConnection(Guid.NewGuid().ToString(), ConnectionName, Host, 
-                (ushort)Port, Username, Password, UseSsl, Database);
+                (ushort)Port, Username, Password, UseSsl, Database, Path);
         }
 
         /// <summary>
@@ -216,6 +223,7 @@ namespace CymaticLabs.InfluxDB.Studio.Dialogs
             connection.Username = Username;
             connection.Password = Password;
             connection.UseSsl = UseSsl;
+            connection.Path = Path;
         }
 
         #endregion Methods

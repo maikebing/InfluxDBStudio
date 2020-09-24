@@ -54,6 +54,8 @@ namespace CymaticLabs.InfluxDB.Data
         /// </summary>
         public bool UseSsl { get; set; }
 
+        public string Path { get; set; }
+
         /// <summary>
         /// Gets the combined/unified host connection string including protocol and port number for
         /// HTTP API access to the InfluxDB server.
@@ -63,7 +65,7 @@ namespace CymaticLabs.InfluxDB.Data
         {
             get
             {
-                return string.Format("{0}://{1}:{2}", UseSsl ? "https" : "http", Host, Port);
+                return string.Format("{0}://{1}:{2}{3}", UseSsl ? "https" : "http", Host, Port, Path);
             }
         }
 
@@ -83,7 +85,7 @@ namespace CymaticLabs.InfluxDB.Data
         /// <param name="useSsl">Whether or not to use SSL to communicate with the InfluxDB server.</param>
         /// <param name="database">The name of the preferred database to use (optional).</param>
         public InfluxDbConnection(string id, string name, string host, ushort port, 
-            string username, string password, bool useSsl = true, string database = null)
+            string username, string password, bool useSsl = true, string database = null, string path = "/")
         {
             Id = id;
             Name = name;
@@ -93,6 +95,7 @@ namespace CymaticLabs.InfluxDB.Data
             Password = password;
             UseSsl = useSsl;
             Database = database;
+            Path = path;
         }
 
         #endregion Constructors
