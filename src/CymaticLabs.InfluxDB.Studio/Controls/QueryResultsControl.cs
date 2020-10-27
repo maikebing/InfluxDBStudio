@@ -157,9 +157,17 @@ namespace CymaticLabs.InfluxDB.Studio.Controls
                 {
                     // Get the value
                     var v = r[x];
-
+                    string displayCell = null;
+                    if (v is DateTime dateTime)
+                    {
+                        displayCell = dateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                    }
+                    else
+                    {
+                        displayCell = v?.ToString();
+                    }
                     // Attach the column values as subitems
-                    var li2 = new ListViewItem.ListViewSubItem(li, v != null ? v.ToString() : null);
+                    var li2 = new ListViewItem.ListViewSubItem(li, displayCell);
                     li2.Tag = r;
                     li.SubItems.Add(li2);
                 }
