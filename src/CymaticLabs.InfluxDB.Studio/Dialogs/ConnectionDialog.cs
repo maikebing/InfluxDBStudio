@@ -54,6 +54,19 @@ namespace CymaticLabs.InfluxDB.Studio.Dialogs
         }
 
         /// <summary>
+        /// Gets or sets the host context path.
+        /// </summary>
+        public string ContextPath
+        {
+            get { return (string)contextPath.Value; }
+
+            set
+            {                
+                contextPath.Value = value;
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the name of the single database to connect to for the connection.
         /// When specifying a single database name database discovery will not occur which
         /// can be helpful if you don't have sufficient privileges to run those commands.
@@ -165,6 +178,7 @@ namespace CymaticLabs.InfluxDB.Studio.Dialogs
             ConnectionName = "New Connection";
             Host = "localhost";
             Port = 8086;
+            ContextPath = "";
             Database = null;
             Username = null;
             Password = null;
@@ -184,6 +198,7 @@ namespace CymaticLabs.InfluxDB.Studio.Dialogs
             ConnectionName = connection.Name;
             Host = connection.Host;
             Port = connection.Port;
+            ContextPath = connection.ContextPath;
             Database = connection.Database;
             Username = connection.Username;
             Password = connection.Password;
@@ -197,7 +212,7 @@ namespace CymaticLabs.InfluxDB.Studio.Dialogs
         public InfluxDbConnection CreateConnection()
         {
             return new InfluxDbConnection(Guid.NewGuid().ToString(), ConnectionName, Host, 
-                (ushort)Port, Username, Password, UseSsl, Database);
+                (ushort)Port, ContextPath, Username, Password, UseSsl, Database);
         }
 
         /// <summary>
@@ -212,6 +227,7 @@ namespace CymaticLabs.InfluxDB.Studio.Dialogs
             connection.Name = ConnectionName;
             connection.Host = Host;
             connection.Port = (ushort)Port;
+            connection.Path = ContextPath;
             connection.Database = Database;
             connection.Username = Username;
             connection.Password = Password;

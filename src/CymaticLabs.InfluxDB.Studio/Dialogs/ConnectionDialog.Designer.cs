@@ -39,6 +39,7 @@
             this.addressInstructions = new System.Windows.Forms.Label();
             this.nameInstructions = new System.Windows.Forms.Label();
             this.host = new System.Windows.Forms.TextBox();
+            this.contextPath = new System.Windows.Forms.TextBox();
             this.database = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.username = new System.Windows.Forms.TextBox();
@@ -99,6 +100,7 @@
             this.panel1.Controls.Add(this.addressInstructions);
             this.panel1.Controls.Add(this.nameInstructions);
             this.panel1.Controls.Add(this.host);
+            this.panel1.Controls.Add(this.contextPath);
             this.panel1.Controls.Add(this.database);
             this.panel1.Controls.Add(this.password);
             this.panel1.Controls.Add(this.username);
@@ -121,7 +123,7 @@
             this.useSsl.Location = new System.Drawing.Point(76, 263);
             this.useSsl.Name = "useSsl";
             this.useSsl.Size = new System.Drawing.Size(68, 17);
-            this.useSsl.TabIndex = 6;
+            this.useSsl.TabIndex = 7;
             this.useSsl.Text = "Use SSL";
             this.useSsl.UseVisualStyleBackColor = true;
             // 
@@ -159,6 +161,17 @@
             this.databaseInstructions.Text = "Optionally specify the name of a single database to connect to.\r\nThis can be usef" +
     "ul when you don\'t have admin privileges to list databases.";
             // 
+            // contextPathInstructions
+            // 
+            this.contextPathInstructions.AutoSize = true;
+            this.contextPathInstructions.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.contextPathInstructions.Location = new System.Drawing.Point(73, 144);
+            this.contextPathInstructions.Name = "contextPathInstructions";
+            this.contextPathInstructions.Size = new System.Drawing.Size(356, 26);
+            this.contextPathInstructions.TabIndex = 9;
+            this.contextPathInstructions.Text = "Optionally specify the context path of the InfluxDB instance, in most cases this" +
+    " can be left empty";
+            // 
             // addressInstructions
             // 
             this.addressInstructions.AutoSize = true;
@@ -189,14 +202,23 @@
             this.host.TabIndex = 1;
             this.host.Text = "localhost";
             // 
+            // contextPath
+            // 
+            this.contextPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.contextPath.Location = new System.Drawing.Point(76, 121);
+            this.contextPath.Name = "contextPath";
+            this.contextPath.Size = new System.Drawing.Size(373, 20);
+            this.contextPath.TabIndex = 3;
+            // 
             // database
             // 
             this.database.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.database.Location = new System.Drawing.Point(76, 121);
+            this.database.Location = new System.Drawing.Point(76, 227);
             this.database.Name = "database";
             this.database.Size = new System.Drawing.Size(373, 20);
-            this.database.TabIndex = 3;
+            this.database.TabIndex = 4;
             // 
             // password
             // 
@@ -205,7 +227,7 @@
             this.password.Location = new System.Drawing.Point(76, 227);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(373, 20);
-            this.password.TabIndex = 5;
+            this.password.TabIndex = 6;
             this.password.UseSystemPasswordChar = true;
             // 
             // username
@@ -215,7 +237,7 @@
             this.username.Location = new System.Drawing.Point(76, 187);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(373, 20);
-            this.username.TabIndex = 4;
+            this.username.TabIndex = 5;
             // 
             // name
             // 
@@ -255,6 +277,15 @@
             this.securityLabel.Size = new System.Drawing.Size(48, 13);
             this.securityLabel.TabIndex = 5;
             this.securityLabel.Text = "Security:";
+            // 
+            // contextPathLabel
+            // 
+            this.contextPathLabel.AutoSize = true;
+            this.contextPathLabel.Location = new System.Drawing.Point(3, 124);
+            this.contextPathLabel.Name = "contextPathLabel";
+            this.contextPathLabel.Size = new System.Drawing.Size(56, 13);
+            this.contextPathLabel.TabIndex = 5;
+            this.contextPathLabel.Text = "Context Path:";
             // 
             // databaseLabel
             // 
@@ -335,6 +366,7 @@
         private System.Windows.Forms.Label addressInstructions;
         private System.Windows.Forms.Label nameInstructions;
         private System.Windows.Forms.TextBox host;
+        private System.Windows.Forms.TextBox contextPath;
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label addressLabel;
@@ -347,7 +379,9 @@
         private System.Windows.Forms.CheckBox useSsl;
         private System.Windows.Forms.Label securityLabel;
         private System.Windows.Forms.Label databaseInstructions;
+        private System.Windows.Forms.Label contextPathInstructions;
         private System.Windows.Forms.TextBox database;
+        private System.Windows.Forms.Label contextPathLabel;
         private System.Windows.Forms.Label databaseLabel;
         private System.Windows.Forms.Button pingButton;
     }
